@@ -11,7 +11,6 @@
 #define NUM_POINTS         100           // Number of points in one sine wave cycle
 #define DELAY_MS           1              // Delay in milliseconds for frequency control
 
-// Function Prototypes
 void I2C0_Init(void);
 void I2C0_Write(uint8_t device_addr, uint16_t data);
 void delayMs(int n);
@@ -33,7 +32,7 @@ int main(void) {
     }
 }
 
-// I2C0 initialization function
+// I2C0 initialization 
 void I2C0_Init(void) {
     SYSCTL_RCGCI2C_R |= 0x01;       // Enable clock for I2C0
     SYSCTL_RCGCGPIO_R |= 0x02;      // Enable clock for Port B
@@ -78,7 +77,7 @@ void generateSineWave(int amplitude, int offset) {
     }
 }
 
-// Simple delay function
+// Simple delay
 void delayMs(int n) {
     int i, j;
     for (i = 0; i < n; i++) {
